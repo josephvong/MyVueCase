@@ -1,10 +1,9 @@
 <template>
   <div class="app">
     <view-box ref="viewBox" bodyPaddingTop="2.5rem">
-      <x-header slot="header"  v-bind:title="this.$route.name" class="main-header"
+     <x-header slot="header"  v-bind:title="this.$route.name" class="main-header"
                 :left-options= "{showBack: this.$route.name=='home'?false:true,}"
       > </x-header>
-
       <div>
        <router-view></router-view>
       </div>
@@ -26,6 +25,7 @@
 </template>
 
 <script>
+import vuexI18n from 'vuex-i18n'
 import { ViewBox, XHeader,Tabbar,TabbarItem,Icon} from 'vux'
 export default {
   name: 'app',
@@ -50,7 +50,7 @@ export default {
     Icon
   },
   mounted(){
-    console.log(this.cuspath)
+
   }
 }
 </script>

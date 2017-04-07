@@ -63,6 +63,6 @@ var webpackConfig = {
 module.exports = vuxLoader.merge(webpackConfig,{
   options:{},
   plugins:[
-    {name:'vux-ui'}
+    {name:'vux-ui'},
   ]
 })
