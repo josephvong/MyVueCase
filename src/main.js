@@ -5,7 +5,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import appstore from './vuex/appstore'
-
+import 'es6-promise/auto'
 /*-------三种方法 使用ajax 发送请求---------*/
 // vux 内置的 基于 axios 的ajax 处理插件 ，如果使用vux可以直接使用
 //import {AjaxPlugin} from 'vux'
@@ -16,8 +16,7 @@ import appstore from './vuex/appstore'
 //Vue.use(VueResource)  // 需要在main.js内 给Vue 定义使用
 
 // 推荐使用 axios ,但如果低版本服务器，需要install es6-promise， 并调用 “require('es6-promise').polyfill()” 兼容没有 Promise 对象的浏览器
-require('es6-promise').polyfill();
-import axios from 'axios' // 可以在任意地方 引入 axios， 并 调用 （无需用Vue.use()做全局定义 ）
+//import axios from 'axios' // 可以在任意地方 引入 axios， 并 调用 （无需用Vue.use()做全局定义 ）
 /*-------三种方法 使用ajax 发送请求---------*/
 
 /*--------------点击延时------------------*/
@@ -44,9 +43,6 @@ new Vue({
   mounted(){
   	// 使用 axios 异步获取数据
   	router.push({"path":"/"});
-  	/*axios.get("http://m.9kacha.com/activity/G100/api/Select_sCount_ActWine.php?page_now=1&randomTime=123")
-  		.then(function(response){
-  			console.log(response);
-  		})*/
+   
   }
 }).$mount("#app")

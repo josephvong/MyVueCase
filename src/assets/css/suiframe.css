@@ -1,0 +1,47 @@
+/*此文件为参考sui的整体布局样式*/
+html{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #3d4145;
+  background: #eee;
+  overflow: hidden;
+}
+
+.sui-page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #eee;
+}
+.sui-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+
+
+
+
+
+
+
+
