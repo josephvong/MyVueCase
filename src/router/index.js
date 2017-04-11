@@ -4,6 +4,7 @@ import home from '../components/home/home.vue'
 import caseGroup from '../components/casegroup/caseGroup.vue'
 import todos from '../components/casegroup/todos/todos.vue'
 import myscroller from '../components/casegroup/myscroller/myscroller.vue'
+import wineRecom from '../components/casegroup/wineRecom/wineRecom.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -19,6 +20,10 @@ export default new Router({
     },
     {
       path: '/casegroup/myscroller',name:'myscroller',component:myscroller
-    }
+    },
+    {
+      path: '/casegroup/wineRecom',name:'wineRecom',component:wineRecom
+    },
+
   ]
 })
