@@ -30,26 +30,30 @@ export default {
   methods:{
     dataLoad(){
       let newObj = {
-        //"wine_id":'f7185ba7a6b413b970b23c66b445cd91',
-        'recomm_sort':1,
-        'only_policy' : 1,
+        "wine_id":"074679831",
+        "user_id":"414022",
+        'year':'2015',
+        "recomm_sort":1,
       };
-      $.ajax({
-        url:localData.hostName+'dataApi/get_auto_recomm.php',
-        data: JSON.stringify(newObj)
-      })
-      /*let newObj = {
-        "wine_id":'f7185ba7a6b413b970b23c66b445cd91',
-        'recomm_sort':1,
-        'only_policy' : 1,
-      };
-      let data = Object.assign(newObj,this.stableData,{page:page})
+      let data = Object.assign({},newObj)
       let params = new URLSearchParams();
       params.append('jparams',JSON.stringify(data))
-      return axios.post('http://localhost/dataApi/get_auto_recomm.php',
+      return axios.post(localData.hostName+'testApi/get_auto_recomm.php',
         params
-      )*/
+      )
     },
+
+    styleLoad(obj){
+      function styleAxios(obj){
+        let data = Object.assign({},obj)
+        let params = new URLSearchParams();
+        params.append('jparams',JSON.stringify(data))
+        return axios.post(localData.hostName+'testApi/get_filter_wine_buy_detail.php',
+          params
+        )
+      }
+      return styleAxios
+    }
   },
   computed:{
 
@@ -58,7 +62,16 @@ export default {
     Popup
   },
   mounted(){
-    //this.dataLoad()
+    this.dataLoad().then((res)=>{
+      let This=this;
+      let arr = res.data.policyData.map((item,index)=>{
+        return this.styleLoad(item.recomm_kv)
+      })
+      //console.log(arr);
+      //return axios.all(arr)
+    })/*.then(axios.spread((a,b,c)=>{
+      console.log(a);
+    }))*/
   }
 }
 </script>
