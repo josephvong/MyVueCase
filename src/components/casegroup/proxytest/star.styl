@@ -1,0 +1,38 @@
+input[type=radio]
+  display none
+  
+.stars
+  display:flex
+  
+  input:checked + label
+    &:before, ~label:before
+      background-color:red
+    
+
+  label
+    position relative
+    display block
+    width:1rem
+    height:1rem
+    cursor pointer 
+    &:not(first-of-type)
+      margin-left:0.3rem
+      
+    &:before
+      content:''
+      position absolute
+      display block
+      width:1rem
+      height:1rem
+      background-color:yellow
+      
+    &:hover  // 覆盖变色 的设置
+      &:before,~ label:before
+        background-color:red
+    for n in 1..5
+      &:nth-of-type({n})
+        order 5 - n
+ 
+
+  .description
+    order 10   

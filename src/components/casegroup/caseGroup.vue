@@ -7,7 +7,7 @@
       <grid-item label="案例2" link="/casegroup/myscroller"  >
         <img slot="icon" src="../../assets/logo.png" />
       </grid-item>
-      <grid-item label="案例3"  >
+      <grid-item label="案例3" link="/casegroup/proxytest"   >
         <img slot="icon" src="../../assets/logo.png" />
       </grid-item>
     </grid>

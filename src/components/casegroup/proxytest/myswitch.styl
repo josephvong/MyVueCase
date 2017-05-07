@@ -1,0 +1,45 @@
+
+input[type=checkbox]
+  display none
+.myswitch + label
+	display inline-block
+	width:6rem
+	height:2rem
+	border-radius 1rem
+	background-color:gray
+	position relative
+	cursor: pointer
+	transition all 0.5s
+	
+	&:before   // 开关内的小圆球
+		content:''
+		width:1.6rem
+		height:1.6rem
+		border-radius:50%
+		background-color white
+		position absolute
+		top:0.2rem
+		left:0.2rem
+		transition all 0.5s
+		
+	&:after  // 开关背后文本
+		content attr(data-off)   // 可以取节点 data-off 中的值
+		position:absolute
+		top:0
+		left:0
+		right:0
+		bottom:0
+		line-height 2rem
+		text-align center
+		text-transform uppercase
+		color:white
+		
+
+.myswitch:checked + label   // 状态为开 的 开关背景样式
+	background-color: green
+		
+	&:before   // 状态 为开 的小球位置
+		transform: translate3d(4rem,0,0)
+	
+	&:after
+		content attr(data-on)	

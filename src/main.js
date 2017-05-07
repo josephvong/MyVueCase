@@ -24,8 +24,8 @@ import FastClick from 'fastclick'
 FastClick.attach(document.body)
 /*--------------点击延时------------------*/
 
-
-
+import "./assets/css/reset.css"
+import "./assets/css/suiframe.css"
 
 /*------全局公用函数--------
 	如果有某些自定义工具函数可以挂在到全局Vue实例里面
